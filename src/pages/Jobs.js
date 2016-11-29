@@ -17,6 +17,7 @@ export default class Comments extends React.Component{
       _this.setState({
         jobs: result.data.jobs
       });
+      console.log(result.data.jobs);
     })
   }
 

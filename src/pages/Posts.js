@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import axios from 'axios';
 
 export default class Posts extends React.Component{
-
 	constructor(props) {
 		super(props);
 		this.state = {
@@ -12,10 +11,11 @@ export default class Posts extends React.Component{
 
 	componentDidMount(){
 		var _this = this;
-			this.serverRequest = axios.get("http://localhost:8080/wp-json/wp/v2/posts").then(function(result) {    
+			this.serverRequest = axios.get("http://360.and-a.nl/wp-json/wp/v2/posts").then(function(result) {    
 	      _this.setState({
-	        posts: result.data.posts
+	        posts: result.data
 	      });
+	      console.log(result.data);
 	    })
 	}
 
@@ -24,11 +24,11 @@ export default class Posts extends React.Component{
 	      <div>
 	        <h1>Jobs!</h1>
 	        {/* Don't have an ID to use for the key, URL work ok? */}
-	        {this.state.post.map(function(post) {
+	        {this.state.posts.map(function(post) {
 	          return (
 	            <div key={post.id} className="post">
 	              <a href={post.link}>
-	                {post.content}
+	                {post.title.rendered}
 	              </a>
 	            </div>
 	          );
