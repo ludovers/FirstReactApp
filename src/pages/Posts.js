@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router';
 import axios from 'axios';
 
 export default class Posts extends React.Component{
@@ -21,15 +22,13 @@ export default class Posts extends React.Component{
 
 	render() {
 	    return (
-	      <div>
-	        <h1>Jobs!</h1>
+	      <div className="yellow bg">
+	        <h1>Posts!</h1>
 	        {/* Don't have an ID to use for the key, URL work ok? */}
 	        {this.state.posts.map(function(post) {
 	          return (
 	            <div key={post.id} className="post">
-	              <a href={post.link}>
-	                {post.title.rendered}
-	              </a>
+	            	<b>{post.title.rendered}</b> - <Link to={post.acf.event_link}>Facebook</Link>
 	            </div>
 	          );
 	        })}

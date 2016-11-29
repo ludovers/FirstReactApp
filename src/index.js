@@ -27,7 +27,7 @@ ReactDOM.render(
 	    	<Route path="archives" component={Archives} />
 	        <Route path="todos" component={Todos} />
 	        <Route path="jobs" component={Jobs} />
-	        <Route path="tast" component={Posts} />
+	        <Route path="posts" component={Posts} />
 	        <Route path="*" component={Nothing}/>
 	    </Route>
 	</Router>

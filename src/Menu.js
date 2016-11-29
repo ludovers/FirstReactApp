@@ -25,7 +25,7 @@ export default class Menu extends React.Component {
 					<li onClick={this.loadFeed}><Link to="/todos">todos</Link></li>
 					<li onClick={this.loadFeed}><Link to="/archives">archives</Link></li>
 					<li onClick={this.loadFeed}><Link to="/jobs">jobs</Link></li>
-					<li onClick={this.loadFeed}><Link to="/tast">posts</Link></li>
+					<li onClick={this.loadFeed}><Link to="/posts">posts</Link></li>
 				</ul>
 			</div>
 		);

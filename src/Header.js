@@ -5,8 +5,13 @@ import Progress from "react-progress-2";
 
 export default class Header extends React.Component {
 	constructor(){
-		super()
+		super();
+		this.state = {
+			headerClass: 'scrollTop'
+		};
 	}
+
+	
 
 	render() {
 		return (
