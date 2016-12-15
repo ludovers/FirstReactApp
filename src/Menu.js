@@ -1,20 +1,9 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router';
-import Progress from "react-progress-2";
 
 export default class Menu extends React.Component {
 	constructor(){
 		super()
-	}
-
-	onLoadFeedCallback() {
-	    Progress.hide();
-	    // render feed.
-	}
-
-	loadFeed() {
-	    //Progress.show();
-	    // do your ajax thing.
 	}
 
 	render() {

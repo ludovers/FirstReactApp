@@ -7,13 +7,11 @@ export default class Todos extends React.Component {
 			todos: []
 		}
 	}
-
+	
 	updateItems = (newTodo) => {
 		var allTodos = this.state.todos.concat([newTodo]);
 		this.setState({todos: allTodos});
 	}
-
-
 
 	render() {
 		

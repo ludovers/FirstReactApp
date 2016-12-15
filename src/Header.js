@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router';
 import Menu from './Menu';
-import Progress from "react-progress-2";
 
 export default class Header extends React.Component {
 	constructor(){
@@ -11,13 +10,33 @@ export default class Header extends React.Component {
 		};
 	}
 
-	
+	componentDidMount() {
+	    window.addEventListener('scroll', this.handleScroll);
+	}
+
+	componentWillUnmount() {
+	    window.removeEventListener('scroll', this.handleScroll);
+	}
+
+	handleScroll = (event) => {
+	    let scrollTop = event.srcElement.body.scrollTop;
+
+	    if(scrollTop >= 100){
+	    	this.setState({
+		      headerClass: 'scrolled'
+		    });
+	    }else{
+	    	this.setState({
+		      headerClass: 'scrollTop'
+		    });
+	    }
+	    
+	}
 
 	render() {
 		return (
 			<div>
-				<header>
-					<Progress.Component/>
+				<header className={this.state.headerClass}>
 					<div className="logo-wrap">
 						<Link to="/">Logo</Link>
 					</div>

@@ -16,7 +16,7 @@ ReactDOM.render(
 		render={applyRouterMiddleware(useTransitions({
 		    TransitionGroup: ReactCSSTransitionGroup,
 		    defaultTransition: {
-		        transitionName: 'example',
+		        transitionName: 'page',
 		        transitionEnterTimeout: 500,
 		        transitionLeaveTimeout: 300
 		    }
